@@ -2,14 +2,19 @@ html,
 body {
   width: 100%;
 }
+.flex {
+  display: flex;
+}
+.flex1 {
+  flex: 1;
+}
 .nav {
   height: 1.067rem;
   font-size: 18px;
   text-align: center;
-  background-color: #1e2025;
+  background-color: #e54847;
   padding: 6px;
   box-sizing: border-box;
-  color: #fff;
 }
 .nav .arrow-left {
   float: left;
@@ -17,7 +22,7 @@ body {
   position: relative;
 }
 .nav .arrow-left:after {
-  content: "";
+  content: '';
   width: 12px;
   height: 12px;
   position: absolute;
@@ -26,7 +31,7 @@ body {
   border: 2px solid #fff;
   border-width: 0 0 2px 2px;
   box-sizing: border-box;
-  transform: rotate(45deg) translateY(-55%);
+  transform: rotate(45deg) translateY(-50%);
 }
 .nav span {
   color: #fff;
@@ -48,9 +53,9 @@ body {
   border-bottom: 1px solid #e5e5e5;
 }
 .page .movie-header {
-  padding: 0;
-  background-color: #f8f8f8;
   border-bottom: none;
+  padding: 0;
+  background: #f8f8f8;
 }
 .page .movie-header .movie {
   color: #fff;
@@ -65,25 +70,26 @@ body {
 .page .movie-header .movie .movie-filter {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
 }
 .page .movie-header .movie .movie-background {
   z-index: 0;
   filter: blur(0.6rem);
   background-image: url("./images/header-bg.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
   background-position-y: 40%;
+  background-repeat: no-repeat;
 }
 .page .movie-header .movie .movie-filter {
   background-color: #40454d;
   opacity: 0.55;
 }
 .page .movie-header .movie .movie-container {
-  position: relative;
   z-index: 1;
+  position: relative;
+  overflow: hidden;
 }
 .page .movie-header .movie .movie-container .movie-cover {
   float: left;
@@ -98,19 +104,19 @@ body {
   width: 100%;
   height: 100%;
 }
-.page .movie-header .movie .movie-container .movie-cover .link #moviePic {
+.page .movie-header .movie .movie-container .movie-cover .link .img {
   width: 100%;
 }
 .page .movie-header .movie .movie-container .movie-cover:after {
-  content: "";
+  content: '';
+  position: absolute;
+  right: 0.1rem;
+  bottom: 0.1rem;
   width: 0.667rem;
   height: 0.667rem;
-  border-radius: 100%;
   background-image: url("./images/bofang.png");
   background-size: 100% auto;
-  position: absolute;
-  left: 40%;
-  top: 42%;
+  border-radius: 100%;
   opacity: 0.7;
 }
 .page .movie-header .movie .movie-container .movie-content {
@@ -123,7 +129,7 @@ body {
 }
 .page .movie-header .movie .movie-container .movie-content .movie-ename {
   font-size: 12px;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.2rem;
 }
 .page .movie-header .movie .movie-container .movie-content .movie-score {
   font-size: 12px;
@@ -137,4 +143,81 @@ body {
 .page .movie-header .movie .movie-container .movie-content .movie-score .rating .rating-score {
   font-size: 0.48rem;
   color: #ffc600;
+}
+.page .movie-header .movie .movie-container .movie-content .movie-detail {
+  font-size: 12px;
+  margin-bottom: 0.16rem;
+  opacity: 0.7;
+}
+.page .movie-header .movie .movie-container .movie-content .movie-detail p {
+  margin-bottom: 0.14rem;
+}
+.page .movie-header .movie .operating {
+  margin-top: 0.5rem;
+}
+.page .movie-header .movie .operating div {
+  border: 1px solid rgba(255,255,255,0.4);
+  background-color: rgba(255,255,255,0.4);
+  font-size: 14px;
+  color: #fff;
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0.25rem 0;
+  border-radius: 4px;
+}
+.page .movie-header .movie .operating div img {
+  vertical-align: middle;
+}
+.page .movie-header .movie .operating div span {
+  vertical-align: middle;
+}
+.page .movie-header .movie .operating .movie-watch {
+  margin-right: 0.3rem;
+}
+.page .movie-header .movie .operating .movie-watch img {
+  width: 14px;
+  height: 14px;
+}
+.page .movie-header .movie .operating .movie-mark img {
+  width: 18px;
+  height: 18px;
+}
+.page .section-seperate {
+  padding-top: 0.4rem;
+  margin-bottom: 0.3rem;
+  border-top: 1px solid #e5e5e5;
+}
+.page .section-expander {
+  padding-left: 0.4rem;
+  padding-right: 0.4rem;
+}
+.page .section-expander .text-expander .text-expander_content.close {
+  min-height: 65px;
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3 /*让文字显示3行后以 ... 结束 ，其余内容 overhidden*/;
+}
+.page .section-expander .text-expander .text-expander_button {
+  height: 0.7rem;
+  text-align: center;
+}
+.page .section-expander .text-expander .text-expander_button .icon-chevron_down {
+  width: 10px;
+  height: 10px;
+  border: 1px solid #aaa;
+  display: inline-block;
+  box-sizing: border-box;
+  border-width: 0 1px 1px 0;
+  transform: rotateZ(45deg);
+  transition: transform 0.5s /*发生这个变化需要的事件*/;
+}
+.page .section-expander .text-expander .text-expander_button .icon-chevron_down.up {
+  transform: rotateZ(-135deg) /*让箭头旋转135度 变成向上的箭头*/;
+}
+#toast {
+  display: none;
 }
